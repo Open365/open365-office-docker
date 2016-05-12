@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<oor:data xmlns:oor="http://openoffice.org/2001/registry">
+  <dependency file="main"/>
+  <oor:component-data oor:package="org.openoffice.Office" oor:name="Common">
+    <node oor:name="Misc">
+      <prop oor:name="UseLocking">
+        <value>false</value>
+      </prop>
+    </node>
+  </oor:component-data>
+</oor:data>
