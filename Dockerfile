@@ -1,6 +1,7 @@
 FROM    docker-registry.eyeosbcn.com/open365-base-with-dependencies
 
 ADD     libreoffice-l10n-es_5.1.0~rc3-0ubuntu1~wily0_all.deb /root/libreoffice-l10n-es_5.1.0_all.deb
+ADD     libreoffice-l10n-it_5.1.0_rc3.deb /root/libreoffice-l10n-it_5.1.0_rc3.deb
 RUN     set -x ; \
         export DEBIAN_FRONTEND=noninteractive ; \
         apt-get update && apt-get install --no-install-recommends -y unzip curl && \
@@ -12,7 +13,7 @@ RUN     set -x ; \
         echo 'deb file:///root/debs /' >> /etc/apt/sources.list.d/libreoffice_pkgs.list && \
         apt-get update && \
         apt-get install --force-yes -y `cat /root/debs/Packages.gz | gzip -d | grep Package | awk '{ print $2 }'` && \
-        dpkg -i /root/libreoffice-l10n-es_5.1.0_all.deb &&\
+        dpkg -i /root/libreoffice-l10n-es_5.1.0_all.deb /root/libreoffice-l10n-it_5.1.0_rc3.deb &&\
         apt-get clean && \
         apt-get autoremove -y && \
         rm -f /etc/apt/sources.list.d/libreoffice_pkgs.list && \
