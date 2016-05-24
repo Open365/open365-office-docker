@@ -3,6 +3,10 @@
 import uno
 import time
 import os
+import logging
+
+logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(os.path.basename(__file__))
 
 autosave_time = float(os.environ.get('AUTOSAVE_TIME', 60))
 
@@ -11,22 +15,23 @@ connected = False
 while not connected:
     try:
         # Establish a connection with the LO API Service
-        print("Establish connection with LO API")
+        logger.debug("Establish connection with LO API")
         localContext = uno.getComponentContext()
-        print("local context ready")
+        logger.debug("local context ready")
         resolver = localContext.ServiceManager.createInstanceWithContext("com.sun.star.bridge.UnoUrlResolver", localContext)
-        print("resolver ready")
+        logger.debug("resolver ready")
         ctx = resolver.resolve("uno:socket,host=localhost,port=2002;urp;StarOffice.ComponentContext")
-        print("Component context ready")
+        logger.debug("Component context ready")
         smgr = ctx.ServiceManager
         connected = True
+        logger.info('Connected to libreoffice-uno')
     except Exception:
-        print("Could not connect to localhost on port 2002")
+        logger.warning("Could not connect to localhost on port 2002")
         time.sleep(1)
 
 # Get the Libreoffice Desktop
 desktop = smgr.createInstanceWithContext("com.sun.star.frame.Desktop", ctx)
-print("Desktop ready")
+logger.debug("Desktop ready")
 
 def saveDoc():
 
@@ -40,7 +45,7 @@ def saveDoc():
 	    doc = enum.nextElement()
 	    url = doc.getURL()
 	    if url and doc.isModified():
-	        print("URL: " + str(url))
+	        logger.info("Storing URL: " + str(url))
 	        doc.store()
 	return
 
