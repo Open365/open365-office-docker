@@ -4,8 +4,6 @@ import uno
 import time
 import os
 
-new_document_name = "untitled-document"
-default_folder = "/home/user/files/"
 autosave_time = float(os.environ.get('AUTOSAVE_TIME', 60))
 
 connected = False
