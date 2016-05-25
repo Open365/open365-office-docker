@@ -5,7 +5,7 @@ import time
 import os
 import logging
 
-logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s')
+logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(os.path.basename(__file__))
 
 autosave_time = float(os.environ.get('AUTOSAVE_TIME', 60))
