@@ -45,7 +45,7 @@ def saveDoc():
 	    doc = enum.nextElement()
 	    url = doc.getURL()
 	    if url and doc.isModified():
-	        logger.info("Storing URL: " + str(url))
+	        logger.info("Saving document {0}".format(url))
 	        doc.store()
 	return
 
