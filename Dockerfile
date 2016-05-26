@@ -42,3 +42,4 @@ COPY    Breeze-gtk.zip /root/
 RUN     mkdir -p /usr/share/themes && cd /usr/share/themes && unzip /root/Breeze-gtk.zip && mv theme/Breeze-gtk ./ && rm -rf theme
 COPY    gtk3Settings.ini /etc/gtk-3.0/settings.ini
 COPY    disable-file-locking.xcd /usr/lib/libreoffice/share/registry/disable-file-locking.xcd
+COPY    run.debug.sh /root/run.debug.sh
