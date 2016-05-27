@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import os
 import uno;
 from subprocess import call;
 from os.path import expanduser;
@@ -52,4 +51,3 @@ def connectAndDestroy( port ):
 	return;
 
 connectAndDestroy("2002");
-os.system("sed -i.bck '/PickList/d' /home/user/.config/libreoffice/4/user/registrymodifications.xcu")
