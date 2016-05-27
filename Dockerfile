@@ -6,9 +6,7 @@ RUN     set -x ; \
         apt-get update && \
         apt-get install -y libreoffice libreoffice-gtk3 libreoffice-style-breeze libreoffice-l10n-es libreoffice-l10n-it && \
         apt-get clean && \
-        apt-get autoremove -y
-
-RUN     export DEBIAN_FRONTEND=noninteractive && apt-get update && apt-get -y autoremove \
+        apt-get -y autoremove \
             g++ \
             gcc \
             netcat \
