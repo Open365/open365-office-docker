@@ -17,7 +17,7 @@ RUN     set -x ; \
             wget \
             && \
             apt-get clean && \
-            rm -rf /car/lib/apt/lists/*
+            rm -rf /var/lib/apt/lists/*
 
 COPY    scripts/* /usr/bin/
 COPY    libreoffice /etc/.skel/.config/libreoffice
