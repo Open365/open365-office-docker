@@ -4,7 +4,7 @@ import uno;
 from subprocess import call;
 from os.path import expanduser;
 
-def connectAndDestroy( port ):
+def connectAndDestroy():
 
 	try:
 		# Establish a connection with the LO API Service
@@ -13,11 +13,11 @@ def connectAndDestroy( port ):
 		print("local context ready");
 		resolver = localContext.ServiceManager.createInstanceWithContext("com.sun.star.bridge.UnoUrlResolver", localContext);
 		print("resolver ready");
-		ctx = resolver.resolve("uno:socket,host=localhost,port="+ port  +";urp;StarOffice.ComponentContext");
+		ctx = resolver.resolve("uno:pipe,name=open365_LO;urp;StarOffice.ComponentContext");
 		print("Component context ready");
 		smgr = ctx.ServiceManager;
 	except Exception:
-		print("Could not connect to localhost on port "+ port);
+		print("Could not connect to localhost")
 		return;
 
 	print("services names:" + str(smgr.getAvailableServiceNames()));
@@ -50,4 +50,4 @@ def connectAndDestroy( port ):
 
 	return;
 
-connectAndDestroy("2002");
+connectAndDestroy();

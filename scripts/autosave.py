@@ -20,7 +20,7 @@ while not connected:
         logger.debug("local context ready")
         resolver = localContext.ServiceManager.createInstanceWithContext("com.sun.star.bridge.UnoUrlResolver", localContext)
         logger.debug("resolver ready")
-        ctx = resolver.resolve("uno:socket,host=localhost,port=2002;urp;StarOffice.ComponentContext")
+        ctx = resolver.resolve("uno:pipe,name=open365_LO;urp;StarOffice.ComponentContext")
         logger.debug("Component context ready")
         smgr = ctx.ServiceManager
         connected = True
