@@ -2,11 +2,22 @@ FROM    docker-registry.eyeosbcn.com/open365-base-with-dependencies
 
 RUN     set -x ; \
         export DEBIAN_FRONTEND=noninteractive ; \
-        apt-get update && apt-get install --no-install-recommends -y unzip && \
+        apt-get update && apt-get install --no-install-recommends -y unzip curl && \
+        cd /root && \
+        curl "https://s3-eu-west-1.amazonaws.com/open365-aptmirror/libreoffice_pkgs.tar.gz" -o libreoffice_pkgs.tar.gz && \
+        mkdir debs && cd debs && \
+        tar -zxvf ../libreoffice_pkgs.tar.gz && \
+        dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz && \
+        echo 'deb file:///root/debs /' >> /etc/apt/sources.list.d/libreoffice_pkgs.list && \
         apt-get update && \
-        apt-get install -y libreoffice libreoffice-gtk3 libreoffice-style-breeze libreoffice-l10n-es libreoffice-l10n-it && \
+        apt-get install --force-yes -y `cat /root/debs/Packages.gz | gzip -d | grep Package | awk '{ print $2 }'` && \
+        apt-get install --force-yes -y libreoffice-l10n-es libreoffice-l10n-it && \
         apt-get clean && \
-        apt-get -y autoremove \
+        rm -f /etc/apt/sources.list.d/libreoffice_pkgs.list && \
+        rm -rf /root/debs && \
+        rm /root/libreoffice_pkgs.tar.gz &&\
+        apt-get update && apt-get -y autoremove \
+            curl \
             g++ \
             gcc \
             netcat \
@@ -17,7 +28,7 @@ RUN     set -x ; \
             wget \
             && \
             apt-get clean && \
-            rm -rf /var/lib/apt/lists/*
+            rm -rf /car/lib/apt/lists/*
 
 COPY    scripts/* /usr/bin/
 COPY    libreoffice /etc/.skel/.config/libreoffice
