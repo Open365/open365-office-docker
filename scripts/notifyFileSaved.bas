@@ -4,7 +4,8 @@ Sub Main
 
 End Sub
 
-Sub notify_open
+Sub notifyFilePathChanged
+    On Error Goto ErrorHandler
 	Dim oSvc as object
 	oSvc = createUnoService("com.sun.star.system.SystemShellExecute")
 	thisDoc = ThisComponent
@@ -13,5 +14,8 @@ Sub notify_open
      	Rem Notify new file path
 		oSvc.execute("/code/open365-services/src/bin/notifyFilePathChanged.sh", docPath, 0)
 	EndIf
+
+  ErrorHandler:
+      Resume Next ' Continues execution at the command following the error command
 
 End Sub
