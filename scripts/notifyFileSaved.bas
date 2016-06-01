@@ -14,5 +14,4 @@ Sub notify_open
 		oSvc.execute("/code/open365-services/src/bin/notifyFilePathChanged.sh", docPath, 0)
 	EndIf
 
-
 End Sub
