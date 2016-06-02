@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -xeu
+
+
+for script in /usr/lib/open365/migrations.d/*
+do
+    if [ -x "$script" ]
+    then
+        "$script"
+    fi
+done

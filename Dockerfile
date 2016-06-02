@@ -27,7 +27,9 @@ RUN     set -x ; \
             wget \
             && \
             apt-get clean && \
-            rm -rf /car/lib/apt/lists/*
+            rm -rf /car/lib/apt/lists/* \
+            && \
+        mkdir -p /usr/lib/open365
 
 COPY    scripts/* /usr/bin/
 COPY    libreoffice /etc/.skel/.config/libreoffice
@@ -38,3 +40,4 @@ RUN     mkdir -p /usr/share/themes && cd /usr/share/themes && unzip /root/Breeze
 COPY    gtk3Settings.ini /etc/gtk-3.0/settings.ini
 COPY    disable-file-locking.xcd /usr/lib/libreoffice/share/registry/disable-file-locking.xcd
 COPY    run.debug.sh /root/run.debug.sh
+COPY    migrations.d /usr/lib/open365/migrations.d
