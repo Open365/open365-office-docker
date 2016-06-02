@@ -32,7 +32,7 @@ RUN     set -x ; \
         mkdir -p /usr/lib/open365
 
 COPY    scripts/* /usr/bin/
-COPY    libreoffice /etc/.skel/.config/libreoffice
+COPY    libreoffice /etc/skel/.config/libreoffice
 
 # Install theme
 COPY    Breeze-gtk.zip /root/

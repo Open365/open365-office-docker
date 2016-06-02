@@ -4,7 +4,7 @@
 # This macro is executed "on document title change" and sends through
 # the bus the current file path
 
-LO_SKEL_FOLDER="/etc/.skel/.config/libreoffice"
+LO_SKEL_FOLDER="/etc/skel/.config/libreoffice"
 LO_USER_CONFIG_FOLDER="/home/user/.config/libreoffice"
 
 if [ -d "$LO_USER_CONFIG_FOLDER" ] && ! grep -qr "notifyFilePathChanged" "$LO_USER_CONFIG_FOLDER"
