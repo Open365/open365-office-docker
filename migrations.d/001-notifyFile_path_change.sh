@@ -5,11 +5,13 @@
 # the bus the current file path
 
 LO_SKEL_FOLDER="/etc/skel/.config/libreoffice"
-LO_USER_CONFIG_FOLDER="/home/user/.config/libreoffice"
+USER_CONFIG_FOLDER="/home/user/.config"
+LO_USER_CONFIG_FOLDER="$USER_CONFIG_FOLDER/libreoffice"
 
-if [ -d "$LO_USER_CONFIG_FOLDER" ] && ! grep -qr "notifyFilePathChanged" "$LO_USER_CONFIG_FOLDER"
+if [ ! -f "$USER_CONFIG_FOLDER"/open365_LO_migrated_3_Jun_2016 ]
 then
-    rm -rf  /home/user/.config/libreoffice
+    touch "$USER_CONFIG_FOLDER"/open365_LO_migrated_3_Jun_2016
+    rm -rf  "$LO_USER_CONFIG_FOLDER"
     cp -r "$LO_SKEL_FOLDER" "$LO_USER_CONFIG_FOLDER"
 else
     echo "libreOffice notifyFilePathChange migration: Nothing to migrate"
