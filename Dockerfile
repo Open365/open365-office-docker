@@ -10,7 +10,8 @@ RUN     set -x ; \
         dpkg-scanpackages . /dev/null | gzip -9c > Packages.gz && \
         echo 'deb file:///root/debs /' >> /etc/apt/sources.list.d/libreoffice_pkgs.list && \
         apt-get update && \
-        apt-get install --force-yes -y libreoffice libreoffice-gtk3 libreoffice-style-breeze libreoffice-l10n-es libreoffice-l10n-it && \
+        apt-get install --force-yes -y libreoffice libreoffice-gtk3 libreoffice-style-breeze \
+            libreoffice-l10n-es libreoffice-l10n-it myspell-es myspell-it && \
         apt-get clean && \
         rm -f /etc/apt/sources.list.d/libreoffice_pkgs.list && \
         rm -rf /root/debs && \
