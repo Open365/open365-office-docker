@@ -1,5 +1,5 @@
 LibreOffice PspFontCacheFile format 6
-FontCacheDirectory:1459775448:/usr/share/fonts/opentype/stix
+FontCacheDirectory:1464875073:/usr/share/fonts/opentype/stix
 File:STIXVariants-Regular.otf
 2;1
 STIXVariants
@@ -145,7 +145,7 @@ File:STIXSizeFourSym-Bold.otf
 STIXSizeFourSym
 0;STIXSizeFourSym-Bold;0;8;5;2;65535;2604;510;2114;0;1315;3114;1315;3114;0;0;0;65536;Bold
 
-FontCacheDirectory:1459775448:/usr/share/fonts/opentype/stix-word
+FontCacheDirectory:1464875073:/usr/share/fonts/opentype/stix-word
 File:STIXMath-Regular.otf
 2;1
 STIX Math
@@ -171,7 +171,7 @@ File:STIX-Italic.otf
 STIX
 0;STIX-Italic;2;5;5;2;65535;1023;305;328;0;2399;1328;2399;1328;0;0;0;65536;Italic
 
-FontCacheDirectory:1459577295:/usr/share/fonts/truetype/oxygen
+FontCacheDirectory:1464832911:/usr/share/fonts/truetype/oxygen
 File:Oxygen-Sans-Bold.ttf
 2;1
 Oxygen-Sans
@@ -187,13 +187,13 @@ File:OxygenMono-Regular.ttf
 Oxygen Mono
 0;OxygenMono-Regular;0;5;5;1;65535;781;218;-1;0;641;999;641;999;0;0;0;0;Regular
 
-FontCacheDirectory:1459775466:/usr/share/fonts/truetype/openoffice
+FontCacheDirectory:1464875050:/usr/share/fonts/truetype/openoffice
 File:opens___.ttf
 2;1
 OpenSymbol
 0;OpenSymbol;0;5;5;2;65535;799;200;-1;0;1262;999;1262;999;0;0;0;8;Regular
 
-FontCacheDirectory:1459775433:/usr/share/fonts/truetype/liberation
+FontCacheDirectory:1464875049:/usr/share/fonts/truetype/liberation
 File:LiberationSerif-Regular.ttf
 2;1
 Liberation Serif
@@ -274,7 +274,7 @@ File:LiberationSansNarrow-Bold.ttf
 Liberation Sans Narrow
 0;LiberationSansNarrow-Bold;0;8;3;2;65535;921;210;131;0;1151;1131;1151;1131;0;0;0;0;Bold
 
-FontCacheDirectory:1459583994:/usr/share/fonts/type1/gsfonts
+FontCacheDirectory:1464854171:/usr/share/fonts/type1/gsfonts
 File:p052023l.pfb
 1;1
 URW Palladio L
@@ -450,7 +450,7 @@ File:n019064l.pfb
 Nimbus Sans L
 0;NimbusSanL-BoldCondItal;2;8;3;2;91;989;298;287;0;1001;718;1001;718;0;0;0;n019064l.afm;Bold Condensed Italic
 
-FontCacheDirectory:1459775433:/usr/share/fonts/truetype/dejavu
+FontCacheDirectory:1464875048:/usr/share/fonts/truetype/dejavu
 File:DejaVuSerif.ttf
 2;1
 DejaVu Serif
@@ -556,7 +556,7 @@ File:DejaVuSansMono-Bold.ttf
 DejaVu Sans Mono
 0;DejaVuSansMono-Bold;0;8;5;1;65535;928;235;163;0;1176;1163;1176;1163;0;0;0;0;Bold
 
-FontCacheDirectory:1459775434:/usr/share/fonts/truetype/gentium
+FontCacheDirectory:1464875050:/usr/share/fonts/truetype/gentium
 File:GenAR102.ttf
 2;1
 GentiumAlt
@@ -577,7 +577,7 @@ File:GenR102.ttf
 Gentium
 0;Gentium;0;5;5;2;65535;858;275;133;0;1816;1133;1816;1133;0;0;0;0;Regular
 
-FontCacheDirectory:1459775434:/usr/share/fonts/truetype/gentium-basic
+FontCacheDirectory:1464875050:/usr/share/fonts/truetype/gentium-basic
 File:GenBkBasI.ttf
 2;1
 Gentium Book Basic

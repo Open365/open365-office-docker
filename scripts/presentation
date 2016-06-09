@@ -1,3 +1,3 @@
 #!/bin/bash
 
-soffice --accept="socket,host=0,port=2002;urp" --nologo --norestore --nolockcheck --impress "$@"
+soffice --accept="pipe,name=open365_LO;urp" --nologo --norestore --nolockcheck --impress "$@"

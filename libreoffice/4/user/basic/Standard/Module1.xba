@@ -21,4 +21,22 @@
 
 Sub Main
 
-End Sub</script:module>
+End Sub
+
+Sub notifyFilePathChanged
+    On Error Goto ErrorHandler
+	Dim oSvc as object
+	oSvc = createUnoService(&quot;com.sun.star.system.SystemShellExecute&quot;)
+	thisDoc = ThisComponent
+	If thisDoc.hasLocation then
+		docPath = ConvertFromURL(thisDoc.Url)
+     	Rem Notify new file path
+		oSvc.execute(&quot;/code/open365-services/src/bin/notifyFilePathChanged.sh&quot;, docPath, 0)
+	EndIf
+
+  ErrorHandler:
+      Resume Next &apos; Continues execution at the command following the error command
+
+End Sub
+
+</script:module>
