@@ -42,3 +42,5 @@ COPY    gtk3Settings.ini /etc/gtk-3.0/settings.ini
 COPY    disable-file-locking.xcd /usr/lib/libreoffice/share/registry/disable-file-locking.xcd
 COPY    run.debug.sh /root/run.debug.sh
 COPY    migrations.d /usr/lib/open365/migrations.d
+
+RUN     cd /usr/share/themes/Breeze-gtk && find . -type f -exec sed -i -e s/eff0f1/f5f6f9/g {} \;
